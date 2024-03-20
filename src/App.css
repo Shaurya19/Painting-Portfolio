@@ -86,3 +86,52 @@ body {
 .Tilt:hover .Tilt-inner {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
+
+@media screen and (max-width: 768px) {
+  .Tilt {
+    width: 100%; /* Take the full width */
+    padding: 0 2rem; /* Reduce padding */
+  }
+
+  .painting img {
+    padding: 1rem; /* Reduce padding */
+  }
+}
+
+/* Media query for mobile devices */
+@media screen and (max-width: 480px) {
+  .Tilt {
+    width: 100%; /* Take the full width */
+    margin: 0; /* Remove margin */
+    padding: 0 1rem; /* Reduce padding */
+  }
+
+  .painting img {
+    width: calc(100% - 2rem); /* Adjust the width to take the full screen width minus padding */
+    padding: 0.5rem; /* Reduce padding */
+    margin: 1rem 0; /* Reduce margin */
+  }
+  
+  /* Adjust the slide-in animations for smaller screens */
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
