@@ -1,14 +1,18 @@
+// components/Painting.jsx
 import React from 'react';
-import { Tilt } from 'react-tilt';
+import { useInView } from 'react-intersection-observer';
+import '../assets/Painting.css'; // Update the import path according to your folder structure
 
-function Painting({ imageUrl }) {
+const Painting = ({ src, alt }) => {
+  const { ref, inView } = useInView({
+    threshold: 0.8, 
+  });
+
   return (
-    <div className="painting">
-      <Tilt className="Tilt" options={{ max: 35, perspective: 1000, scale: 1.05 }}>
-        <img src={imageUrl} alt="Painting" className="Tilt-inner" />
-      </Tilt>
+    <div ref={ref} className={`painting ${inView ? 'inFocus' : ''}`}>
+      <img src={src} alt={alt} className="painting-img" />
     </div>
   );
-}
+};
 
 export default Painting;

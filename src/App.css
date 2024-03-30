@@ -1,137 +1,57 @@
-.App {
-  background: #FFEFBA;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #FFFFFF, #FFEFBA);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #FFFFFF, #FFEFBA); 
-}
 
-/* .navbar {
-  background-color: #333;
-  padding: 20px 0;
-  text-align: center;
-  color: white;
-} */
 
-.painting {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  width: 100%;
-  overflow: hidden;
-  gap: 2rem;
-}
-
-.painting img {
-  width: 100%;
-  border-radius: 8px;
-  display: block;
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
   padding: 2rem;
-  cursor: pointer;
-  border: 1px solid black;
-  margin: 2rem 0;
+  text-align: center;
 }
 
-.painting-left {
-  animation: slideInLeft 1s forwards;
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-.painting-right {
-  animation: slideInRight 1s forwards;
-}
-
-@keyframes slideInLeft {
+@keyframes logo-spin {
   from {
-    opacity: 0;
-    transform: translateX(-100px);
+    transform: rotate(0deg);
   }
   to {
-    opacity: 1;
-    transform: translateX(0);
+    transform: rotate(360deg);
   }
 }
 
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(100px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
   }
 }
 
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Assuming this is in App.css or another global stylesheet */
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  background: #FFEFBA; /* Fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #FFFFFF, #FFEFBA); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #FFFFFF, #FFEFBA); /* Standard syntax */
+  min-height: 100vh; /* Makes sure the background covers the whole page */
+  width: 100%;
   box-sizing: border-box;
 }
 
-.Tilt {
-  width: 1000px; /* Adjust based on your image size */
-  margin: 10px;
-  /* perspective: 1000px; Lower makes the tilt more pronounced */
-  padding: 0 8rem;
-  padding-left: 4rem;
-}
-
-.Tilt-inner {
-  transition: transform 0.5s ease-in-out;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-/* Optional: Add a hover effect */
-.Tilt:hover .Tilt-inner {
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
-
-@media screen and (max-width: 768px) {
-  .Tilt {
-    width: 100%; /* Take the full width */
-    padding: 0 2rem; /* Reduce padding */
-  }
-
-  .painting img {
-    padding: 1rem; /* Reduce padding */
-  }
-}
-
-/* Media query for mobile devices */
-@media screen and (max-width: 480px) {
-  .Tilt {
-    width: 100%; /* Take the full width */
-    margin: 0; /* Remove margin */
-    padding: 0 1rem; /* Reduce padding */
-  }
-
-  .painting img {
-    width: calc(100% - 2rem); /* Adjust the width to take the full screen width minus padding */
-    padding: 0.5rem; /* Reduce padding */
-    margin: 1rem 0; /* Reduce margin */
-  }
-  
-  /* Adjust the slide-in animations for smaller screens */
-  @keyframes slideInLeft {
-    from {
-      opacity: 0;
-      transform: translateX(-50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  @keyframes slideInRight {
-    from {
-      opacity: 0;
-      transform: translateX(50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-}

@@ -1,0 +1,36 @@
+/* assets/Painting.css */
+.painting {
+    transition: transform 0.5s ease, filter 0.5s ease;
+    filter: blur(4px);
+    transform: scale(0.95);
+    margin: 50px auto; /* centered with auto margins */
+    border: 1px solid #8c8c8c;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 90%; /* adjust this value as needed to control the size */
+  }
+  
+  .painting.inFocus {
+    filter: blur(0);
+    transform: scale(1);
+    border-color: #333;
+  }
+  
+  .painting-img {
+    width: 100%; /* makes the image fill the container */
+    display: block;
+  }
+  
+@media (max-width: 768px) {
+.painting {
+    margin: 20px auto; /* Smaller margins for mobile */
+    max-width: 90%; /* Larger width percentage for smaller screens */
+}
+}
+
+@media (max-width: 480px) {
+.painting {
+    margin: 15px auto; /* Even smaller margins for very small screens */
+    max-width: 95%; /* Even larger width percentage for smaller screens */
+}
+}
+
